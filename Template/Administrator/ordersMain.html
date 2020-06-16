@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <div class="w3-container">
+        <div class="w3-row">
+            <h3>Orders Management</h3>
+        </div>
+        <div class="w3-row">
+            <div class="w3-card w3-half">
+                <table class="w3-table-all w3-striped">
+                <tr>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <form name="OrdersFetch">
+                    {% csrf_token %}
+                        <td><input type="date" name="st_date"></td>
+                        <td><input type="date" name="end_date"></td>
+                        <td><input type="button" value="Refresh" onclick="fetchOrders()"></td>
+                    </form>
+                </tr>
+                </table>
+            </div>
+            <div class="w3-padding w3-half">
+                <span id="status_span"><input type="button" value="Close Order" onclick="updateStatus()"/></span>
+            </div>
+        </div>
+        <div class="w3-row-padding">
+            <div class="w3-card w3-col s8" id="orders-container" style="visibility: hidden;">
+                <h4>Orders Table</h4>
+                <table class="w3-table w3-bordered w3-striped w3-responsive" id="ordersTable">
+                </table>
+            </div>
+            <div class="w3-card w3-col s4" id="orders-summary-container" style="visibility: hidden;">
+                <h3>Items</h3>
+                <table class="w3-table w3-bordered w3-striped w3-responsive" id="ordersSummary">
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'Administrator/js/ordersMain.js' %}"></script>
+    <script src="{% static 'js/utility.js' %}"></script>
+    <script src="{% static 'token.js' %}"></script>
+</body>
+</html>

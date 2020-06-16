@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+</head>
+<body>
+
+    <form name="buyForm">
+        <pre>
+        {% csrf_token %}
+
+            Product Name    : <select name="product" id="products1"></select>
+            Quantity        : <input type="text" id="quantity1"/>
+            Product Name    : <select name="product" id="products2"></select>
+            Quantity        : <input type="text" id="quantity2"/>
+            User Id         : <input type="text" id="userId"/>
+                              <input type="button" value="Add Products" onclick="buyProduct()"/>
+                              <input type="button" value="Submit" onclick="submitOrder()"/>
+        </pre>
+    </form>
+<script src="{% static 'BuyerPOC/js/main.js' %}"></script>
+<script src="{% static 'token.js' %}"></script>
+</body>
+</html>

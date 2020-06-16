@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seller Assigned Buyer</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <div class="w3-container">
+        <h3><i>Seller Request Details</i></h3>
+        <div class="w3-row">
+            <div class="w3-card" style="visibility: hidden" id="sellerRequestContainer">
+                <h4>Seller Request</h4>
+                <table class="w3-table w3-bordered w3-striped w3-responsive" id="sellerRequestTable">
+                </table>
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-card" style="visibility: hidden" id="assignedOrdersContainer">
+                <h4>Assigned Orders</h4>
+                <table class="w3-table w3-bordered w3-striped w3-responsive" id="assignedOrdersTable">
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script src="{% static 'Administrator/js/assignedBuyer.js' %}"></script>
+    <script src="{% static 'js/utility.js' %}"></script>
+    <script src="{% static 'token.js' %}"></script>
+</body>
+</html>

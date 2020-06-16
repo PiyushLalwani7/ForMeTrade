@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body>
+    <form name="userForm" enctype="multipart/form-data">
+        {% csrf_token %}
+        <pre>
+            Username    : <input type="text" name="username">
+            Email       : <input type="text" name="emailId">
+            Password    : <input type="password" name="password">
+            Contact1    : <input type="text" name="contact1">
+            Contact2    : <input type="text" name="contact2">
+            Add Profile : <input type="file" name="profilePicture">
+                          <input type="button" value="Submit" onclick="registerUser()">
+        </pre>
+    </form>
+
+    <!-- Javascript Links -->
+    <script src="{% static 'DummyWeb/js/registerUser.js' %}"></script>
+    <script src="{% static 'token.js' %}"></script>
+</body>
+</html>

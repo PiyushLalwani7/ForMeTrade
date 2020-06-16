@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+</head>
+<body>
+
+<form name="productForm" enctype="multipart/form-data">
+    {% csrf_token %}
+    <pre>
+        Product_Category_Name :<select name="product_categories" id="product_categories_dropdown"></select>
+        Product Name          :<input type="text" name="product_name">
+        Product Description   :<input type="text" name="product_description">
+        Reorder Quantity      :<input type="text" name="reorder_quantity">
+        Units                 :<select name="product_unit" id="product_unit_dropdown"></select>
+        Image                 :<input type="file" name="product_image">
+                               <input type="button" value="Submit" onclick="addProduct()">
+    </pre>
+</form>
+<script src="{% static 'DummyWeb/js/product.js' %}"></script>
+<script src="{% static 'token.js' %}"></script>
+</body>
+</html>

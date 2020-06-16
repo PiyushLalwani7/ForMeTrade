@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sell Product</title>
+</head>
+<body>
+
+    <form name="productSellForm">
+        <pre>
+        {% csrf_token %}
+
+            Product Category: <select name="product_category" id="product_categories_dropdown"></select>
+            Product Name    : <select name="product" id="products_dropdown"></select>
+            Quantity        : <input type="text" name="quantity"/>
+            Price           : <input type="text" name="price"/>
+            User Id         : <input type="text" name="userId"/>
+                              <input type="button" value="Submit" onclick="sellProduct()"/>
+        </pre>
+    </form>
+<script src="{% static 'SellerUI/js/productSellingForm_js.js' %}"></script>
+<script src="{% static 'token.js' %}"></script>
+</body>
+</html>

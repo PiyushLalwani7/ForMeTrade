@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Approve Seller Registeration</title>
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+</head>
+<body>
+    <div class="w3-container">
+        <h1>Registration Requests</h1>
+    </div>
+
+    <div class="w3-container">
+        <form name="SearchUser">
+            {% csrf_token %}
+            <div class="w3-row">
+                <div class="w3-col l8 m8 s8">
+                    <label>Contact Number</label>
+                    <input class="w3-input w3-border" type="text" name="contact_no"/>
+                </div>
+
+                <div class="w3-col l3 m3 s3 w3-margin-left">
+                    <button class="w3-margin-top w3-button w3-border" type="button" onclick="getSellerRegistrationRequest()">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="w3-container w3-margin-top">
+            <div class="w3-row-padding">
+                <div class="w3-col l12 m12 s6">
+                    <div class="w3-card" id="requests-container">
+                        <h2>Seller Registeration Request</h2>
+                        <table class="w3-table w3-bordered w3-striped w3-responsive w3-padding-left w3-margin-bottom" id="sellerRegisterRequestsTable">
+                        </table>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+
+    <script src="{% static 'Administrator/js/sellerRegister.js' %}"></script>
+    <script src="{% static 'js/utility.js' %}"></script>
+    <script src="{% static 'token.js' %}"></script>
+
+</body>
+</html>
+

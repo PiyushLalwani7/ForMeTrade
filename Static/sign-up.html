@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body>
+    <form name="userForm">
+        {% csrf_token %}
+        <pre>
+            Username : <input type="text" name="username">
+            Email    : <input type="text" name="emailId">
+            Password : <input type="password" name="password">
+                        <input type="button" value="Submit" onclick="registerUser()">
+        </pre>
+    </form>
+
+    <!-- Javascript Links -->
+    <script src="{% static 'UserManagement/js/main.js' %}"></script>
+    <script src="{% static 'token.js' %}"></script>
+</body>
+</html>

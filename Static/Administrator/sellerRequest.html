@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Approve Deals</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <h1>Approval Page</h1>
+    <div class="w3-container">
+
+        <div class="w3-half">
+            <table class="w3-table-all w3-striped">
+
+                <tr>
+                  <th>Status</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <form name="DealFetch">
+                    {% csrf_token %}
+                        <td><select name="status" id="status_dropdown"></select></td>
+                        <td><input type="date" name="st_date"></td>
+                        <td><input type="date" name="end_date"></td>
+                        <td><input type="button" value="Refresh" onclick="FetchDeal()"></td>
+                    </form>
+                </tr>
+                </table>
+        </div>
+
+        <div class="w3-card w3-threequarter" id="table-container" style="display: none;">
+            <table class="w3-table-all w3-bordered w3-striped  w3-responsive" id="dealsTable">
+
+            </table>
+
+        </div>
+        <div class="w3-card w3-quarter" style="display: none;" id="details-container">
+            <div style="position: absolute; visibility: hidden" id="assignment-container">
+                <span><select id="EmployeeDetails_dropdown"></select></span>
+                <span><input type="button" value="Assign Employee" onclick="assignEmployee()"></span>
+            </div>
+            <div style="position: absolute; visibility: hidden" id="rate-container">
+                <input type="button" value="Fetch Details" onclick="getDealDetails()">
+                <div class="w3-card w3-container" id="deal-details">
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+<script src="{% static 'Administrator/js/sellerRequestMain.js' %}"></script>
+<script src="{% static 'js/utility.js' %}"></script>
+<script src="{% static 'token.js' %}"></script>
+</body>
+</html>

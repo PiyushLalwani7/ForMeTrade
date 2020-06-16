@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product Category</title>
+
+</head>
+<body>
+<form name="addProductCategoryForm" enctype="multipart/form-data">
+    {% csrf_token %}
+    <pre>
+        Category Name       : <input type="text" name="category_name">
+        Category Description: <input type="text" name="category_description">
+        Category Image      : <input type="file" name="image">
+                              <input type="button" value="Submit" onclick="addProductCategory()">
+    </pre>
+</form>
+<script src="{% static 'DummyWeb/js/productCategoryMain.js' %}"></script>
+<script src="{% static 'token.js' %}"></script>
+</body>
+</html>

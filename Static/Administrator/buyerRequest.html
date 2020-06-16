@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buyer Request Approval</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <div class="w3-container">
+        <h1>Request</h1>
+    </div>
+    <div class="w3-container">
+        <div class="w3-half">
+            <table class="w3-table-all w3-striped">
+                <tr>
+                  <th>Status</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <form name="BuyerRequestFetch">
+                    {% csrf_token %}
+                        <td><select name="status" id="status_dropdown"></select></td>
+                        <td><input type="date" name="st_date"></td>
+                        <td><input type="date" name="end_date"></td>
+                        <td><input type="button" value="Refresh" onclick="fetchBuyerRequests()"></td>
+                    </form>
+                </tr>
+                </table>
+        </div>
+    </div>
+
+        <div class="w3-container w3-margin-top">
+            <div class="w3-row-padding">
+                <div class="w3-col s6">
+                    <div class="w3-card" id="requests-container" style="display: none;">
+                        <h2>Buyer Requests</h2>
+                        <table class="w3-table w3-bordered w3-striped w3-responsive" id="requestsTable">
+                        </table>
+                    </div>
+                </div>
+                <div class="w3-col s6">
+                    <div class="w3-row" style="position: relative">
+                        <div class="w3-card" id="assignment-container" style="visibility: hidden">
+                            <h2>Assign Employee</h2>
+                            <span><select id="EmployeeDetails_dropdown"></select></span>
+                            <span><input type="button" value="Assign Employee" onclick="assignEmployee()"></span>
+                        </div>
+                        <div class="w3-card" id="requests-items-container" style="visibility: hidden">
+                            <input type="button" value="Fetch Items" onclick="getItemsDetails()"/>
+                            <h2>Items in Order</h2>
+                            <table class="w3-table w3-bordered w3-striped w3-responsive" id="itemsTable">
+                            </table>
+                            <input type="button" value="Fetch Inventory" id="fetchInventoryButton" style="display: none" onclick="getProductInventory()">
+                        </div>
+                    </div>
+                    <div class="w3-row" style="position: relative">
+                        <div class="w3-card w3-margin-top" id="available-items-container" style="visibility: hidden">
+                            <h2>Available Stocks</h2>
+                            <table class="w3-table w3-bordered w3-striped w3-responsive" id="inventoryTable">
+                            </table>
+                            <input type="button" value="Assign Product" id="assignProductButton" style="display: none" onclick="getAssignProduct()">
+                        </div>
+                    </div>
+                    <div class="w3-row" style="position: relative">
+                        <div class="w3-card w3-margin-top" id="order-items-container" style="visibility: hidden">
+                            <h2>Order Summary</h2>
+                            <table class="w3-table w3-bordered w3-striped w3-responsive" id="ordersTable">
+                                <thead class="w3-grey">
+                                    <th>Buyer User Id</th>
+                                    <th>Seller Request Id</th>
+                                    <th>Product Id</th>
+                                    <th>Quantity</th>
+                                    <th>Deal Price</th>
+                                    <th></th>
+                                </thead>
+                            </table>
+                            <input type="button" value="Place Order" id="placeOrderButton" style="display: none" onclick="placeOrder()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'Administrator/js/buyerMain.js' %}"></script>
+    <script src="{% static 'js/utility.js' %}"></script>
+    <script src="{% static 'token.js' %}"></script>
+
+</body>
+</html>
+
