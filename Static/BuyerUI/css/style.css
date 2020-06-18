@@ -2,6 +2,30 @@
     background-color: #7fad39!important;
 }
 
+.w3-tangerine {
+  font-family: 'Tangerine', serif;
+}
+
+.partner-head{
+  color: #0a0c3d;
+  line-height: 26px;
+  margin: 0 0 14px 0;
+}
+
+.partner-body{
+  color: #081802;
+  font-family: "Comic Sans MS", cursive, sans-serif !important;
+}
+
+.partner-image{
+    height: -webkit-fill-available !important;
+    opacity: 0.3 !important;
+}
+
+
+
+
+
 /*Sweet Alert Login Button*/
 .login-btn {
     background-color: #7fad39!important;
@@ -262,6 +286,10 @@
 	position: relative;
 	overflow: hidden;
 	background-position: center center;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 .featured__item__pic__hover {
@@ -344,6 +372,178 @@
 	font-weight: 700;
 }
 
+/*---------------------
+  Icons Section
+-----------------------*/
+.ftco-section {
+  padding: 2em 0;
+  position: relative; }
+
+.ftco-services .services {
+  display: block;
+  width: 100%;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .ftco-services .services .icon {
+    display:block;
+    line-height: 1.3;
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background : #82ae46;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .ftco-services .services .icon:after {
+      position: absolute;
+      display:block;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      content: '';
+      border: 2px solid rgba(255, 255, 255, 0.19);
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      border-radius: 50%; }
+    .ftco-services .services .icon span {
+      font-size: 50px;
+      display:block;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+  .ftco-services .services .media-body {
+    width: 100%; }
+    .ftco-services .services .media-body h3 {
+      font-size: 15px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: "Poppins", Arial, sans-serif;
+      color: #000000; }
+    .ftco-services .services .media-body span {
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 12px;
+      font-weight: 500; }
+  .ftco-services .services:hover .icon, .ftco-services .services:focus .icon {
+    background: #82ae46; }
+    .ftco-services .services:hover .icon span, .ftco-services .services:focus .icon span {
+      color: #fff; }
+
+
+.align-items-center {
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important; }
+
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
+
+.justify-content-center {
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important; }
+
+.align-self-stretch {
+  -ms-flex-item-align: stretch !important;
+  -ms-grid-row-align: stretch !important;
+  align-self: stretch !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.media-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0; }
+  .no-gutters > .col,
+  .no-gutters > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0; }
+
+
+/*---------------------
+  Safe Section Feature
+-----------------------*/
+.safe-section{
+    background-color: #e3c8c8;
+    width: 100%;
+    height: auto;
+}
+.safe-container{
+    margin: 10px 10px 10px 10px;
+}
+
+.safe-container h2{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 50px;
+    font-family: "Poppins" sans-serif;
+    color: #82ae46;
+}
+
+.safe-container h3{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: "Poppins" sans-serif;
+    color: #ffffff;
+}
+
+.safe-image{
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+/*---------------------
+  Why Us feature
+-----------------------*/
+.why-us-section{
+    padding: 20px 0px 0px 0px;
+    margin: 10px 10px 10px 10px;
+    width: 100%;
+    height: auto;
+}
+
+/*---------------------
+  Animate feature
+-----------------------*/
+.animate{
+    -webkit-animation: fadein ease 5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein ease 5s; /* Firefox < 16 */
+        -ms-animation: fadein ease 5s; /* Internet Explorer */
+         -o-animation: fadein ease 5s; /* Opera < 12.1 */
+            animation: fadein ease 5s;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 /*---------------------
   Blinking Feature
